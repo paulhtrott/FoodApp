@@ -10,4 +10,6 @@
 
 @interface FoodViewController : UIViewController
 
+- (IBAction)btnClicked:(id)sender;
+
 @end

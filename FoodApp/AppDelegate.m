@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "FoodViewController.h"
 
 @implementation AppDelegate
 
@@ -16,6 +17,7 @@
     [_managedObjectContext release];
     [_managedObjectModel release];
     [_persistentStoreCoordinator release];
+    
     [super dealloc];
 }
 
@@ -27,7 +29,8 @@
 {
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
     // Override point for customization after application launch.
-    self.window.backgroundColor = [UIColor orangeColor];
+    self.window.backgroundColor = [UIColor whiteColor];
+    self.window.rootViewController = [[[FoodViewController alloc] initWithNibName:@"FoodViewController" bundle:nil] autorelease];
     [self.window makeKeyAndVisible];
     return YES;
 }

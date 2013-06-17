@@ -14,6 +14,16 @@
 
 @implementation FoodViewController
 
+- (IBAction)btnClicked:(id)sender
+{
+    UIAlertView *alert = [[[UIAlertView alloc] initWithTitle:@"Hello Food"
+                                                    message:@"iPhone, Here I come"
+                                                   delegate:self
+                                          cancelButtonTitle:@"Ok Food"
+                                          otherButtonTitles: nil] autorelease];
+    [alert show];
+}
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
