@@ -8,7 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FoodViewController : UIViewController
+@interface FoodViewController : UIViewController <UIAlertViewDelegate, UIActionSheetDelegate>
+{
+    IBOutlet UITextField *_txtFoodName;
+    IBOutlet UILabel *_txtFoodTitle;
+}
+
+@property(nonatomic, strong) UITextField *txtFoodName;
+@property(nonatomic, strong) UILabel *txtFoodTitle;
 
 - (IBAction)btnClicked:(id)sender;
 
