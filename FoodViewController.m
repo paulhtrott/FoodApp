@@ -7,6 +7,7 @@
 //
 
 #import "FoodViewController.h"
+#import "Fruit.h"
 
 @interface FoodViewController ()
 
@@ -14,14 +15,16 @@
 
 @implementation FoodViewController
 
+
 - (IBAction)btnClicked:(id)sender
 {
-    UIAlertView *alert = [[[UIAlertView alloc] initWithTitle:@"Hello Food"
-                                                    message:@"iPhone, Here I come"
-                                                   delegate:self
-                                          cancelButtonTitle:@"Ok Food"
-                                          otherButtonTitles: nil] autorelease];
-    [alert show];
+    UIActionSheet *action = [[[UIActionSheet alloc] initWithTitle:_txtFoodTitle.text
+                                                         delegate:self
+                                                cancelButtonTitle:@"OKAY"
+                                           destructiveButtonTitle:@"Delete Message"
+                                                otherButtonTitles:@"Option 1", @"Option 2", nil] autorelease];
+    
+    [action showInView:self.view];
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -35,14 +38,58 @@
 
 - (void)viewDidLoad
 {
+    
+        //--Sample of a fruit object
+    Food *fruit = [[[Fruit alloc] init] autorelease];
+    fruit.name = @"Macintosh Apple";
+    fruit.calories = 12;
+    fruit.caloriesFromFat = 10;
+    fruit.carbs = 50;
+    fruit.protein = 0;
+    fruit.fat = 12;
+    fruit.foodGroup = @"Fruit";
+    fruit.foodType = @"Sweet";
+    fruit.descriptionOf = @"Best fruit on the planet";
+    fruit.healthBenefits = @"Promotes healthy teeth";
+    fruit.healthRisks = @"Seeds can contain trace arsnic particles";
+    fruit.servingSize = 1;
+    fruit.measurement = @"apple";
+    
+        //--apply Fruit name to label test.
+    _txtFoodTitle.text = fruit.name;
+    
+    
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    
 }
+
+
+- (void) actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+     NSString *btnMessage = [[[NSString alloc] initWithFormat:@"You clicked button at index %d", buttonIndex] autorelease];
+    if (buttonIndex == 1)
+    {
+        UIAlertView *alert = [[[UIAlertView alloc] initWithTitle:@"BTN1 Clicked"
+                                                         message:btnMessage
+                                                        delegate:self
+                                               cancelButtonTitle:@"Click"
+                                               otherButtonTitles:nil] autorelease];
+        [alert show];
+    }
+}
+
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)dealloc
+{
+    [_txtFoodName release]; _txtFoodName = nil;
+    [_txtFoodTitle release]; _txtFoodTitle = nil;
+    [super dealloc];
 }
 
 @end
