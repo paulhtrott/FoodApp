@@ -14,8 +14,12 @@
 {
     FoodViewController *_foodViewController;
     AboutViewController *_aboutViewController;
+    IBOutlet UIScrollView *_scrollView;
 }
 
+@property(strong)FoodViewController *foodViewController;
+@property(strong)AboutViewController *aboutViewController;
+@property(strong)UIScrollView *scrollView;
 
 - (IBAction)fruitButtonClick:(id)sender;
 - (IBAction)aboutButtonClick:(id)sender;

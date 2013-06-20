@@ -18,6 +18,7 @@
 {
     [_foodViewController release]; _foodViewController = nil;
     [_aboutViewController release]; _aboutViewController = nil;
+    [_scrollView release]; _scrollView = nil;
     [super dealloc];
 }
 
@@ -63,8 +64,9 @@
 
 - (void)viewDidLoad
 {
+    _scrollView.frame = CGRectMake(0, 138, 320, 410);
+    [_scrollView setContentSize:CGSizeMake(320, 653)];
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
 }
 
 - (void)didReceiveMemoryWarning
