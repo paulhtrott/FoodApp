@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "FoodViewController.h"
+#import "FoodGroupsViewController.h"
 
 @implementation AppDelegate
 
@@ -30,7 +30,7 @@
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
-    self.window.rootViewController = [[[FoodViewController alloc] initWithNibName:@"FoodViewController" bundle:nil] autorelease];
+    self.window.rootViewController = [[[FoodGroupsViewController alloc] initWithNibName:@"FoodGroupsViewController" bundle:nil] autorelease];
     [self.window makeKeyAndVisible];
     return YES;
 }
