@@ -75,7 +75,20 @@
 
 - (void)loadFoodGroups
 {
-        //--Sample food objects
+    Food *fruit = self.getFruit;
+    Food *veg = self.getVeggie;
+    
+    if (_foodGroups) {
+        [_foodGroups release];
+    }
+    
+    
+    _foodGroups = [[NSArray alloc] initWithObjects:fruit, veg, nil];
+    
+}
+
+- (Food *)getFruit
+{
     Food *_fruit = [[[Fruit alloc] init] autorelease];
     _fruit.name = @"Macintosh Apple";
     _fruit.calories = 12;
@@ -91,6 +104,11 @@
     _fruit.servingSize = 1;
     _fruit.measurement = @"apple";
     
+    return _fruit;
+}
+
+- (Food *)getVeggie
+{
     Food *_veg = [[[Vegetable alloc] init] autorelease];
     _veg = [[Food alloc] init];
     _veg.name = @"Carrot";
@@ -106,13 +124,7 @@
     _veg.servingSize = 3;
     _veg.measurement = @"cups";
     
-    if (_foodGroups) {
-        [_foodGroups release];
-    }
-    
-    
-    _foodGroups = [[NSArray alloc] initWithObjects:_fruit,_veg, nil];
-    
+    return _veg;
 }
 
 
