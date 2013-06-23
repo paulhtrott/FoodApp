@@ -19,6 +19,9 @@
     [_foodViewController release]; _foodViewController = nil;
     [_aboutViewController release]; _aboutViewController = nil;
     [_scrollView release]; _scrollView = nil;
+    [_fruitButton release]; _fruitButton = nil;
+    [_veggieButton release]; _veggieButton = nil;
+    [_aboutButton release]; _aboutButton = nil;
     [super dealloc];
 }
 
@@ -64,8 +67,6 @@
 
 - (void)viewDidLoad
 {
-    _scrollView.frame = CGRectMake(0, 138, 320, 410);
-    [_scrollView setContentSize:CGSizeMake(320, 653)];
     [super viewDidLoad];
 }
 
