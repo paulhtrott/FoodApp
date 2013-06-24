@@ -77,49 +77,73 @@
 
 - (void)setCalories:(NSInteger)calories
 {
-    if (_calories < 0)
+    if (calories < 0)
     {
         _calories = 0;
+    }
+    else
+    {
+        _calories = calories;
     }
 }
 
 - (void)setCaloriesFromFat:(NSInteger)caloriesFromFat
 {
-    if (_caloriesFromFat < 0)
+    if (caloriesFromFat < 0)
     {
         _caloriesFromFat = 0;
+    }
+    else
+    {
+        _caloriesFromFat = caloriesFromFat;
     }
 }
 
 - (void)setServingSize:(double)servingSize
 {
-    if (_servingSize < 0)
+    if (servingSize < 0.00)
     {
         _servingSize = 0.00;
+    }
+    else
+    {
+        _servingSize = servingSize;
     }
 }
 
 - (void)setCarbs:(double)carbs
 {
-    if (_carbs < 0)
+    if (carbs < 0)
     {
         _carbs = 0.00;
+    }
+    else
+    {
+        _carbs = carbs;
     }
 }
 
 - (void)setFat:(double)fat
 {
-    if (_fat < 0)
+    if (fat < 0)
     {
         _fat = 0;
+    }
+    else
+    {
+        _fat = fat;
     }
 }
 
 - (void)setProtein:(double)protein
 {
-    if (_protein < 0)
+    if (protein < 0)
     {
         _protein = 0.00;
+    }
+    else
+    {
+        _protein = protein;
     }
 }
 
