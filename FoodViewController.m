@@ -49,7 +49,7 @@
     
     _foodGroupCell.textLabel.text = [[_foodGroups objectAtIndex:indexPath.row] name];
     
-    NSMutableString *detailedText = [[NSMutableString alloc] init];
+    NSMutableString *detailedText = [[[NSMutableString alloc] init] autorelease];
     
     if ([[[_foodGroups objectAtIndex:indexPath.row] foodType] isEqual: @"No Type"]) {
         [detailedText appendString:@"Serving Size: "];
@@ -107,22 +107,23 @@
 
 - (Food *)getFruit
 {
-    Food *_fruit = [[[Fruit alloc] init] autorelease];
-    _fruit.name = @"Macintosh Apple";
-    _fruit.calories = 12;
-    _fruit.caloriesFromFat = 10;
-    _fruit.carbs = 50;
-    _fruit.protein = 0;
-    _fruit.fat = 12;
-    _fruit.foodGroup = @"Fruit";
-    _fruit.foodType = @"Sweet";
-    _fruit.descriptionOf = @"Best fruits on the planet";
-    _fruit.healthBenefits = @"Promotes healthy teeth";
-    _fruit.healthRisks = @"Seeds can contain trace arsnic particles";
-    _fruit.servingSize = 1.0;
-    _fruit.measurement = @"apple";
     
-    return _fruit;
+    Food *_banana = [[[Fruit alloc] init] autorelease];
+    _banana.name = @"Chaquita Banana";
+    _banana.calories = 100;
+    _banana.caloriesFromFat = 45;
+    _banana.carbs = 35;
+    _banana.protein = 0;
+    _banana.fat = 2;
+    _banana.foodGroup = @"Fruit";
+    _banana.foodType = @"Sweet";
+    _banana.descriptionOf = @"Best Bananas on around";
+    _banana.healthBenefits = @"Super Yellow";
+    _banana.healthRisks = @"Diarrhea";
+    _banana.servingSize = 1;
+    _banana.measurement = @"large banana";
+    
+    return _banana;
 }
 
 - (Food *)getVeggie
@@ -138,7 +139,7 @@
     _veg.descriptionOf = @"Best vegetables on earth";
     _veg.healthBenefits = @"Promotes healthy eyes";
     _veg.healthRisks = @"Too many can turn you orange";
-    _veg.servingSize = 3.0;
+    _veg.servingSize = 3.256;
     _veg.measurement = @"cups";
     
     return _veg;
