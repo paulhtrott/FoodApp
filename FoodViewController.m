@@ -12,13 +12,14 @@
 
 @interface FoodViewController ()
 
+@property(nonatomic, strong) NSArray *foodGroups;
+
 @end
 
 @implementation FoodViewController
 
 - (void)dealloc
 {
-    [_foodGroups release]; _foodGroups = nil;
     [_foodGroupTable release]; _foodGroupTable = nil;
     
     [super dealloc];
@@ -48,7 +49,6 @@
     
     _foodGroupCell.textLabel.text = [[_foodGroups objectAtIndex:indexPath.row] foodGroup];
     _foodGroupCell.detailTextLabel.text = [[_foodGroups objectAtIndex:indexPath.row] descriptionOf];
-    
     
     return _foodGroupCell;
     
@@ -82,6 +82,7 @@
         [_foodGroups release];
     }
     
+    NSLog(@"New Count: %d", [_foodGroups count]);
     
     _foodGroups = [[NSArray alloc] initWithObjects:fruit, veg, nil];
     
@@ -110,7 +111,6 @@
 - (Food *)getVeggie
 {
     Food *_veg = [[[Vegetable alloc] init] autorelease];
-    _veg = [[Food alloc] init];
     _veg.name = @"Carrot";
     _veg.calories = 100;
     _veg.caloriesFromFat = 13;
