@@ -108,6 +108,12 @@ Food *testFood;
 
     /////////////////
     //Testing Integers and Doubles Are Not Less Than 0 (non-negative)
+- (void)testFoodServingSizeEqualsEntry
+{
+    [testFood setServingSize:1.00];
+    STAssertEquals([testFood servingSize], 1.00, @"If number is entered with a correct value, the entered value is stored");
+}
+
 - (void)testFoodServingSizeNotLessThanZero
 {
     [testFood setServingSize:-2];
