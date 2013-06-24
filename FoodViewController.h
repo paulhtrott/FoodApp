@@ -12,11 +12,10 @@
 {
     
     IBOutlet UITableView *_foodGroupTable;
-    NSArray *_foodGroups;
+    
 }
 
 @property(strong) UITableView *foodGroupTable;
-@property(strong) NSArray *foodGroups;
 
 - (IBAction)backButton:(id)sender;
 
