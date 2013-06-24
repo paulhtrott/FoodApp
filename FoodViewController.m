@@ -47,8 +47,25 @@
         _foodGroupCell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:nil] autorelease];
     }
     
-    _foodGroupCell.textLabel.text = [[_foodGroups objectAtIndex:indexPath.row] foodGroup];
-    _foodGroupCell.detailTextLabel.text = [[_foodGroups objectAtIndex:indexPath.row] descriptionOf];
+    _foodGroupCell.textLabel.text = [[_foodGroups objectAtIndex:indexPath.row] name];
+    
+    NSMutableString *detailedText = [[NSMutableString alloc] init];
+    
+    if ([[[_foodGroups objectAtIndex:indexPath.row] foodType] isEqual: @"No Type"]) {
+        [detailedText appendString:@"Serving Size: "];
+        
+    } else {
+        [detailedText appendString:[[_foodGroups objectAtIndex:indexPath.row] foodType]];
+        [detailedText appendString:@" - Serving Size: "];
+    }
+    
+    [detailedText appendString:[NSString stringWithFormat:@"%.2f",[[_foodGroups objectAtIndex:indexPath.row] servingSize]]];
+    [detailedText appendString:@" "];
+    [detailedText appendString:[[_foodGroups objectAtIndex:indexPath.row] measurement]];
+    
+    _foodGroupCell.detailTextLabel.text = detailedText;
+    
+    
     
     return _foodGroupCell;
     
@@ -102,7 +119,7 @@
     _fruit.descriptionOf = @"Best fruits on the planet";
     _fruit.healthBenefits = @"Promotes healthy teeth";
     _fruit.healthRisks = @"Seeds can contain trace arsnic particles";
-    _fruit.servingSize = 1;
+    _fruit.servingSize = 1.0;
     _fruit.measurement = @"apple";
     
     return _fruit;
@@ -121,7 +138,7 @@
     _veg.descriptionOf = @"Best vegetables on earth";
     _veg.healthBenefits = @"Promotes healthy eyes";
     _veg.healthRisks = @"Too many can turn you orange";
-    _veg.servingSize = 3;
+    _veg.servingSize = 3.0;
     _veg.measurement = @"cups";
     
     return _veg;
