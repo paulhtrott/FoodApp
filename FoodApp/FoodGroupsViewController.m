@@ -18,10 +18,6 @@
 {
     [_foodViewController release]; _foodViewController = nil;
     [_aboutViewController release]; _aboutViewController = nil;
-    [_scrollView release]; _scrollView = nil;
-    [_fruitButton release]; _fruitButton = nil;
-    [_veggieButton release]; _veggieButton = nil;
-    [_aboutButton release]; _aboutButton = nil;
     [super dealloc];
 }
 
