@@ -1,5 +1,5 @@
 //
-//  FoodViewController.h
+//  FruitViewController.h
 //  FoodApp
 //
 //  Created by Paul Trott on 6/17/13.
@@ -8,15 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FoodViewController : UIViewController <UITableViewDataSource , UITableViewDelegate>
+@interface FruitViewController : UIViewController <UITableViewDataSource , UITableViewDelegate>
 {
     
     IBOutlet UITableView *_foodGroupTable;
     
 }
 
-@property(strong) UITableView *foodGroupTable;
-
-- (IBAction)backButton:(id)sender;
+@property(strong, nonatomic) UITableView *foodGroupTable;
 
 @end

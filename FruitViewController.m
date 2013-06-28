@@ -1,22 +1,22 @@
 //
-//  FoodViewController.m
+//  FruitViewController
 //  FoodApp
 //
 //  Created by Paul Trott on 6/17/13.
 //  Copyright (c) 2013 Paul Trott. All rights reserved.
 //
 
-#import "FoodViewController.h"
+#import "FruitViewController.h"
 #import "Fruit.h"
 #import "Vegetable.h"
 
-@interface FoodViewController ()
+@interface FruitViewController ()
 
 @property(nonatomic, strong) NSArray *foodGroups;
 
 @end
 
-@implementation FoodViewController
+@implementation FruitViewController
 
 - (void)dealloc
 {
@@ -25,9 +25,13 @@
     [super dealloc];
 }
 
-- (IBAction)backButton:(id)sender
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
-    [self.view removeFromSuperview];
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        self.title = NSLocalizedString(@"Fruits", @"Fruits");
+    }
+    return self;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -70,16 +74,6 @@
     return _foodGroupCell;
     
     
-}
-
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
 }
 
 - (void)viewDidLoad

@@ -7,6 +7,8 @@
 //
 
 #import "FoodGroupsViewController.h"
+#import "FruitViewController.h"
+#import "AboutViewController.h"
 
 @interface FoodGroupsViewController ()
 
@@ -16,49 +18,41 @@
 
 - (void)dealloc
 {
-    [_foodViewController release]; _foodViewController = nil;
+    [_fruitViewController release]; _fruitViewController = nil;
     [_aboutViewController release]; _aboutViewController = nil;
     [super dealloc];
-}
-
-- (IBAction)fruitButtonClick:(id)sender
-{
-        //--Add the view of the Food View controller to the current view
-    if (_foodViewController == nil) {
-        _foodViewController = [[FoodViewController alloc] initWithNibName:@"FoodViewController" bundle:nil];
-    }
-    
-        //-- Animate the view.
-    [UIView transitionWithView:self.view
-                      duration:0.5
-                       options:UIViewAnimationOptionTransitionCurlUp | UIViewAnimationOptionLayoutSubviews | UIViewAnimationOptionAllowAnimatedContent
-                    animations:^{[self.view addSubview:_foodViewController.view];}
-                    completion:NULL];
-    
-}
-
-- (IBAction)aboutButtonClick:(id)sender
-{
-        //-Add thee view of the About View Controller to the current view
-    if (_aboutViewController == nil) {
-        _aboutViewController = [[AboutViewController alloc] initWithNibName:@"AboutViewController" bundle:nil];
-    }
-    
-        //--Animate the view.
-    [UIView transitionWithView:self.view
-                      duration:0.5
-                       options:UIViewAnimationOptionTransitionCurlUp | UIViewAnimationOptionLayoutSubviews | UIViewAnimationOptionAllowAnimatedContent
-                    animations:^{[self.view addSubview:_aboutViewController.view];}
-                    completion:NULL];
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+        self.title = NSLocalizedString(@"Healthy Choices", @"Healthy Choices");
     }
+    
     return self;
+}
+
+- (IBAction)fruitButtonClick:(id)sender
+{
+        //--Add the view of the Fruit View controller to the current view
+    if (!self.fruitViewController) {
+        self.fruitViewController = [[[FruitViewController alloc] initWithNibName:@"FruitViewController" bundle:nil] autorelease];
+    }
+    
+    [self.navigationController pushViewController:self.fruitViewController animated:YES];
+    
+}
+
+- (IBAction)aboutButtonClick:(id)sender
+{
+        //-Add thee view of the About View Controller to the current view
+    if (!self.aboutViewController) {
+        self.aboutViewController = [[[AboutViewController alloc] initWithNibName:@"AboutViewController" bundle:nil] autorelease];
+    }
+    
+    [self.navigationController pushViewController:self.aboutViewController animated:YES];
+    
 }
 
 - (void)viewDidLoad

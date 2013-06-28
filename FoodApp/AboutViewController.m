@@ -14,16 +14,11 @@
 
 @implementation AboutViewController
 
-- (IBAction)backButton:(id)sender
-{
-    [self.view removeFromSuperview];
-}
-
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+        self.title = NSLocalizedString(@"About", @"About");
     }
     return self;
 }

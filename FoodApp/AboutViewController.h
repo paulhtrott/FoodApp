@@ -11,6 +11,4 @@
 @interface AboutViewController : UIViewController
 
 
-- (IBAction)backButton:(id)sender;
-
 @end

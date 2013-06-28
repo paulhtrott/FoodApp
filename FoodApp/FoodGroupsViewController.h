@@ -7,16 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "FoodViewController.h"
-#import "AboutViewController.h"
+
+@class FruitViewController;
+@class AboutViewController;
 
 @interface FoodGroupsViewController : UIViewController
 {
-    FoodViewController *_foodViewController;
+    FruitViewController *_fruitViewController;
     AboutViewController *_aboutViewController;
 }
 
-@property(strong)FoodViewController *foodViewController;
+@property(strong)FruitViewController *fruitViewController;
 @property(strong)AboutViewController *aboutViewController;
 
 - (IBAction)fruitButtonClick:(id)sender;

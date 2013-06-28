@@ -17,7 +17,7 @@
     [_managedObjectContext release];
     [_managedObjectModel release];
     [_persistentStoreCoordinator release];
-    
+    [_navigationController release];
     [super dealloc];
 }
 
@@ -29,8 +29,12 @@
 {
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
     // Override point for customization after application launch.
+    FoodGroupsViewController *foodGroupdsViewController = [[[FoodGroupsViewController alloc] initWithNibName:@"FoodGroupsViewController" bundle:nil] autorelease];
+    self.navigationController = [[[UINavigationController alloc] initWithRootViewController:foodGroupdsViewController] autorelease];
+    self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
+    self.navigationController.navigationBar.tintColor = [UIColor colorWithRed:.2 green:.58 blue:.013 alpha:1];
     self.window.backgroundColor = [UIColor whiteColor];
-    self.window.rootViewController = [[[FoodGroupsViewController alloc] initWithNibName:@"FoodGroupsViewController" bundle:nil] autorelease];
+    self.window.rootViewController = self.navigationController;
     [self.window makeKeyAndVisible];
     return YES;
 }
