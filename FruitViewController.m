@@ -25,6 +25,8 @@
     [super dealloc];
 }
 
+#pragma mark - Nib File Setup
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -33,6 +35,9 @@
     }
     return self;
 }
+
+
+#pragma mark - Table View Setup
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -75,6 +80,8 @@
     
     
 }
+
+#pragma mark - View Loading
 
 - (void)viewDidLoad
 {

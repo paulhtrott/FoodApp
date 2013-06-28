@@ -14,6 +14,8 @@
 
 @implementation AboutViewController
 
+#pragma mark - Nib File Setup
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -22,6 +24,8 @@
     }
     return self;
 }
+
+#pragma mark - View Load
 
 - (void)viewDidLoad
 {

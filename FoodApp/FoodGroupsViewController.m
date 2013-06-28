@@ -23,6 +23,8 @@
     [super dealloc];
 }
 
+#pragma mark - Nib Setup
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -32,6 +34,8 @@
     
     return self;
 }
+
+#pragma mark - Button Actions
 
 - (IBAction)fruitButtonClick:(id)sender
 {
@@ -54,6 +58,7 @@
     [self.navigationController pushViewController:self.aboutViewController animated:YES];
     
 }
+
 
 - (void)viewDidLoad
 {
