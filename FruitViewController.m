@@ -6,6 +6,7 @@
 //  Copyright (c) 2013 Paul Trott. All rights reserved.
 //
 
+
 #import "FruitViewController.h"
 #import "Fruit.h"
 #import "Vegetable.h"
@@ -21,6 +22,7 @@
 - (void)dealloc
 {
     [_foodGroupTable release]; _foodGroupTable = nil;
+    [_detailViewController release]; _detailViewController = nil;
     
     [super dealloc];
 }
@@ -79,6 +81,22 @@
     return _foodGroupCell;
     
     
+}
+
+#pragma mark - Cell In Table Clicked
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    Food *clickedFood;
+    
+    if (!self.detailViewController) {
+        self.detailViewController = [[[DetailViewController alloc] initWithNibName:@"DetailViewController" bundle:nil] autorelease];
+    }
+    
+    clickedFood = [_foodGroups objectAtIndex:[indexPath row]];
+    
+    self.detailViewController.detailFood = clickedFood;
+    
+    [self.navigationController pushViewController:self.detailViewController animated:YES];
 }
 
 #pragma mark - View Loading
