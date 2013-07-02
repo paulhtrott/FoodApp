@@ -18,6 +18,8 @@
 {
     [_foodNameLabel release]; _foodNameLabel = nil;
     [_foodGroupLabel release]; _foodGroupLabel = nil;
+    [_foodTypeLabel release]; _foodTypeLabel = nil;
+    
     [_detailFood release]; _detailFood = nil;
     
     [super dealloc];
