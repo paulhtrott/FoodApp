@@ -56,6 +56,7 @@
     
     if (!_foodGroupCell) {
         _foodGroupCell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:nil] autorelease];
+        _foodGroupCell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
     
     _foodGroupCell.textLabel.text = [[_foodGroups objectAtIndex:indexPath.row] name];
