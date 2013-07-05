@@ -8,6 +8,7 @@
 
 #import "FoodGroupsViewController.h"
 #import "FruitViewController.h"
+#import "VegetableViewController.h"
 #import "AboutViewController.h"
 
 @interface FoodGroupsViewController ()
@@ -20,6 +21,7 @@
 {
     [_fruitViewController release]; _fruitViewController = nil;
     [_aboutViewController release]; _aboutViewController = nil;
+    [_vegetableViewController release]; _vegetableViewController = nil;
     [super dealloc];
 }
 
@@ -45,6 +47,17 @@
     }
     
     [self.navigationController pushViewController:self.fruitViewController animated:YES];
+    
+}
+
+- (IBAction)vegetableButtonClick:(id)sender
+{
+        //--Add the view of the Vegetable View controller to the current view
+    if (!self.vegetableViewController) {
+        self.vegetableViewController = [[[VegetableViewController alloc] initWithNibName:@"VegetableViewController" bundle:nil] autorelease];
+    }
+    
+    [self.navigationController pushViewController:self.vegetableViewController animated:YES];
     
 }
 
