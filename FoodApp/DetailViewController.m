@@ -19,7 +19,18 @@
     [_foodNameLabel release]; _foodNameLabel = nil;
     [_foodGroupLabel release]; _foodGroupLabel = nil;
     [_foodTypeLabel release]; _foodTypeLabel = nil;
+    [_foodServingSizeLabel release]; _foodServingSizeLabel = nil;
+    [_foodCaloriesLabel release]; _foodCaloriesLabel = nil;
+    [_foodCaloriesFromFatLabel release]; _foodCaloriesFromFatLabel = nil;
+    [_foodCarbsLabel release]; _foodCarbsLabel = nil;
+    [_foodProteinLabel release]; _foodProteinLabel = nil;
+    [_foodFatLabel release]; _foodFatLabel = nil;
     
+    [_foodDescription release]; _foodDescription = nil;
+    [_foodHealthBenefits release]; _foodHealthBenefits = nil;
+    [_foodHealthRisks release]; _foodHealthRisks = nil;
+    
+    [_scrollView release]; _scrollView = nil;
     [_detailFood release]; _detailFood = nil;
     
     [super dealloc];
@@ -52,6 +63,7 @@
 
 - (void)configureView
 {
+    
         //Update the user interface for the details on item.
     if (self.detailFood) {
         
@@ -74,20 +86,39 @@
             self.foodTypeLabel.text = [self.detailFood foodType];
         }
         
+        if ([[self.detailFood measurement] isEqualToString:@"No Measurement"]) {
+            self.foodServingSizeLabel.text = [NSString stringWithFormat:@"%.2f", [self.detailFood servingSize]];
+        } else {
+            self.foodServingSizeLabel.text = [NSString stringWithFormat:@"%.2f %@", [self.detailFood servingSize], [self.detailFood measurement]];
+        }
         
+        self.foodCaloriesLabel.text = [NSString stringWithFormat:@"%i",[self.detailFood calories]];
+        self.foodCaloriesFromFatLabel.text = [NSString stringWithFormat:@"%i", [self.detailFood caloriesFromFat]];
+        self.foodCarbsLabel.text = [NSString stringWithFormat:@"%.2fg", [self.detailFood carbs]];
+        self.foodProteinLabel.text = [NSString stringWithFormat:@"%.2fg", [self.detailFood protein]];
+        self.foodFatLabel.text = [NSString stringWithFormat:@"%.2fg", [self.detailFood fat]];
+        self.foodDescription.text = [self.detailFood descriptionOf];
+        self.foodHealthBenefits.text = [self.detailFood healthBenefits];
+        self.foodHealthRisks.text = [self.detailFood healthRisks];
         
     }
+    
 }
 
 #pragma mark - View Loading
 
 - (void)viewDidLoad
 {
+    _scrollView = [[[UIScrollView alloc] initWithFrame:[[UIScreen mainScreen] applicationFrame]] autorelease];
+    
+    CGRect screenRect = [[UIScreen mainScreen] bounds];
+    CGFloat contentWidth = screenRect.size.width;
+    CGFloat contentHeight = screenRect.size.height;
+    
+    _scrollView.contentSize = CGSizeMake(contentWidth, contentHeight);
     
     [super viewDidLoad];
-    
     [self configureView];
-    
 }
 
 - (void)didReceiveMemoryWarning
