@@ -43,7 +43,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    NSLog(@"FoodGroups Array Count: %d", [_foodGroups count]);
+    NSLog(@"Fruit Array Count: %d", [_foodGroups count]);
     
     return [_foodGroups count];
 }
