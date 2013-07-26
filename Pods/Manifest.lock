@@ -1,0 +1,10 @@
+PODS:
+  - sqlite3 (3.7.17.0)
+
+DEPENDENCIES:
+  - sqlite3 (~> 3.7.17.0)
+
+SPEC CHECKSUMS:
+  sqlite3: 98f504c3af2ac60f9bd94db5c98fb71ef045604d
+
+COCOAPODS: 0.22.2
