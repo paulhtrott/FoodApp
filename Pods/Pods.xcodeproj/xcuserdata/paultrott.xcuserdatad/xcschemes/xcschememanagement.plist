@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Pods-AFNetworking.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>3</integer>
+		</dict>
 		<key>Pods-sqlite3.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -17,12 +22,27 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>683074546A44482FB737F023</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>6C9607ADED294AB7B70C1F06</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>8560EB97E2E544AAA216D802</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>8D6F2B6C58C14DD0BE4A6E9A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>BB0D49162F1F461CB2871A7A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
